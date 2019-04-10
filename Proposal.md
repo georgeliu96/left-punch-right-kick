@@ -1,4 +1,4 @@
-#Left-Punch Right-Kick 
+# Left-Punch Right-Kick 
 
 ## Introduction 
 Draws inspiration from PC game, One Finger Death Punch and Android game, Stick Fight: Shadow Warrior 
