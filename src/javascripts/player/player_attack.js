@@ -1,5 +1,7 @@
+import { sprite } from './player_idle';
+
 var playerAttack = new Image();
-playerAttack.src="../left-punch-right-kick%20assets/player-sprite-4/adventurer-hand-combat-Sheet.png"
+playerAttack.src="../src/assets/player-sprite-4/adventurer-hand-combat-Sheet.png"
 
 
 function handleKeydown(e) {
