@@ -11,44 +11,71 @@ playerPunch.src="../src/assets/player-sprite-4/reverse-punch.png"
 var playerKick = new Image();
 playerKick.src="../src/assets/player-sprite-4/forward-kick.png"
 
-var plyrSprt = sprite({
+var playerSprite = sprite({
     context: canvas,
     height: 37,
     width: 50,
     image: player,
     numberOfFrames: 4,
-    ticksPerFrame: 5
-})
+    ticksPerFrame: 5,
+    dx: 297,
+    dy: 335
+});
 
-var left_press = false;
-var right_press = false; 
+var keyLeft = false;
+var keyRight = false;
 
 function reset() {
-    setTimeout(() => plyrSprt.action(player,0,0), 400);
+    setTimeout(() => playerSprite.action(player,0,0), 500);
 }
 
-function handleLeft() {
-    punch();
+function handleLeft(e) {
+    if(e.type === "keyup") {
+        setTimeout(() => keyLeft = false, 500);
+    }else {
+        if (!keyLeft) {
+            punch();
+            keyLeft = true;
+        }
+    }
+}
+
+function handleRight(e) {
+    if(e.type === "keyup") {
+        setTimeout(() => keyRight = false, 300);
+    }else {
+        if (!keyRight) {
+            kick();
+            keyRight = true;
+        }
+    }
 }
 
 function punch() {
-    plyrSprt.action(playerPunch, 0, 0);
+    playerSprite.action(playerPunch, 0, 0);
     reset();
 }
 
 function kick() {
-    plyrSprt.action(playerKick, 0, 0);
+    playerSprite.action(playerKick, 0, 0);
     reset();
 }
 
 export function handleKeydown(e) {
 
     if (e.code == "ArrowLeft" || e.code == "KeyA") {
-        handleLeft();
+        handleLeft(e);
     }else if (e.code == "ArrowRight" || e.code == "KeyD") {
-        kick();
+        handleRight(e);
     }
 }
 
+export function handleKeyup(e) {
+    if (e.code == "ArrowLeft" || e.code == "KeyA") {
+        handleLeft(e);
+    }else if (e.code == "ArrowRight" || e.code == "KeyD") {
+        handleRight(e);
+    }
+}
 
-export default plyrSprt;
+export default playerSprite;

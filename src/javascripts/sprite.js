@@ -9,25 +9,30 @@ function sprite(options) {
         frameIndex = 0,
         tickCount = 0,
         ticksPerFrame = options.ticksPerFrame || 0,
-        numberOfFrames = options.numberOfFrames || 1,
-        sx = that.sx || 0,
-        sy = that.sy || 0;
+        numberOfFrames = options.numberOfFrames || 1;
 
     that.context = options.context.getContext("2d");
     that.height = options.height;
     that.width = options.width; 
     that.image = options.image;
+    that.dx = options.dx || 0;
+    that.dy = options.dy || 0;
+    that.sx = options.sx || 0;
+    that.reverse = options.reverse || 1;
+
 
     that.render = () => {
-
-        that.context.clearRect(0, 0, 900, 616);
-        ctx.drawImage(background,0,0)
         that.context.scale(1.5,1.5);
         that.context.drawImage(
-            that.image, sx + (frameIndex * that.width), sy, that.width, that.height, 297, 335, that.width, that.height
+            that.image, that.sx + (frameIndex * that.width * that.reverse), 0, that.width, that.height, that.dx, that.dy, that.width, that.height
         );
         that.context.scale(2/3, 2/3);
     } 
+
+    that.frameStep = () => {
+        that.context.clearRect(0, 0, 900, 616);
+        ctx.drawImage(background, 0, 0)
+    }
 
     that.loop = options.loop;
 
@@ -42,6 +47,16 @@ function sprite(options) {
             }
         }
     };
+
+    //dir = -1 || 1 for left || right respectively
+    that.run = (dir) => {
+        var total_dx = (dir === 1) ? (
+            that.dx
+        ) : (900 - that.dx)
+        if (total_dx < 400) {
+            that.dx += 1 * dir;
+        }
+    }
 
     that.action = (image, x, y) => {
         that.image = image;
