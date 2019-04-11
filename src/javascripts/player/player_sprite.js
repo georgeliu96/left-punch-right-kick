@@ -18,8 +18,9 @@ var playerSprite = sprite({
     image: player,
     numberOfFrames: 4,
     ticksPerFrame: 5,
-    dx: 297,
-    dy: 335
+    dx: (440 - 25) / 1.5,
+    dy: (502 / 1.5),
+    scale: 1.5
 });
 
 var keyLeft = false;

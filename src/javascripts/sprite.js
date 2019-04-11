@@ -18,15 +18,17 @@ function sprite(options) {
     that.dx = options.dx || 0;
     that.dy = options.dy || 0;
     that.sx = options.sx || 0;
+    that.atkImg = options.atkImg || "";
     that.reverse = options.reverse || 1;
+    that.scale = options.scale || 1;
 
 
     that.render = () => {
-        that.context.scale(1.5,1.5);
+        that.context.scale(that.scale,that.scale);
         that.context.drawImage(
             that.image, that.sx + (frameIndex * that.width * that.reverse), 0, that.width, that.height, that.dx, that.dy, that.width, that.height
         );
-        that.context.scale(2/3, 2/3);
+        that.context.scale(1/that.scale, 1/that.scale);
     } 
 
     that.frameStep = () => {
@@ -52,9 +54,11 @@ function sprite(options) {
     that.run = (dir) => {
         var total_dx = (dir === 1) ? (
             that.dx
-        ) : (900 - that.dx)
-        if (total_dx < 400) {
+        ) : ((852 / that.scale) - that.dx)
+        if (total_dx < (400 / that.scale)) {
             that.dx += 1 * dir;
+        }else {
+            that.image = that.atkImg; 
         }
     }
 

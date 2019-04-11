@@ -1,6 +1,7 @@
 import { handleKeydown, handleKeyup } from './player/player_sprite';
 import playerSprite from './player/player_sprite';
-import { leftSprite, rightSprite }  from './player/enemy_sprite';
+// import { leftSprite, rightSprite }  from './player/enemy_sprite';
+import currentEnemies from './player/difficulty_enemies';
 
 var canvas = document.getElementById("game-canvas");
 
@@ -17,19 +18,25 @@ background.onload = () => {
 
 
 function gameLoop() {
-
     window.requestAnimationFrame(gameLoop)
     playerSprite.frameStep();
 
     playerSprite.update();
     playerSprite.render();
 
-    leftSprite.update();
-    leftSprite.run(1)
-    leftSprite.render();
-    rightSprite.update();
-    rightSprite.run(-1);
-    rightSprite.render();
+    currentEnemies.forEach(enemy => {
+        // debugger 
+        enemy.update();
+        enemy.run(-enemy.reverse);
+        enemy.render();
+    })
+
+    // leftSprite.update();
+    // leftSprite.run(1)
+    // leftSprite.render();
+    // rightSprite.update();
+    // rightSprite.run(-1);
+    // rightSprite.render();
 
     // that.context.clearRect(0, 0, 900, 616);
 
