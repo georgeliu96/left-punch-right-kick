@@ -1,0 +1,25 @@
+{
+  "name": "left-punch-right-kick",
+  "version": "1.0.0",
+  "description": "Draws inspiration from PC game, One Finger Death Punch and Android game, Stick Fight: Shadow Warrior",
+  "main": "left-punch-right-kick.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -w --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saphknight/left-punch-right-kick.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saphknight/left-punch-right-kick/issues"
+  },
+  "homepage": "https://github.com/saphknight/left-punch-right-kick#readme",
+  "dependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
