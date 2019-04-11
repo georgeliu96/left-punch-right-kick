@@ -1,5 +1,5 @@
-import handleKeydown from './player/player_attack';
-import plyrSprt from './player/player_idle';
+import { handleKeydown } from './player/player_sprite';
+import plyrSprt from './player/player_sprite';
 
 var canvas = document.getElementById("game-canvas");
 
@@ -7,7 +7,6 @@ var background = new Image();
 background.src = "../src/assets/Background.png";
 
 document.addEventListener("keydown", handleKeydown);
-// document.addEventListener("keyup", handleKeyup);
 
 background.onload = () => {
     gameLoop();
