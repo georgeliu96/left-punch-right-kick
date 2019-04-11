@@ -2,7 +2,7 @@ var canvas = document.getElementById("game-canvas"),
     ctx = canvas.getContext("2d");
 
 var background = new Image();
-background.src = "C:/Users/George/Desktop/left-punch-right-kick/left-punch-right-kick assets/Background.png";
+background.src = "https://github.com/saphknight/left-punch-right-kick/blob/master/left-punch-right-kick%20assets/Background.png";
 
 background.onload = () => {
     ctx.drawImage(background,0,0)
@@ -11,7 +11,7 @@ background.onload = () => {
 
 
 var player = new Image(); 
-player.src = "C:/Users/George/Desktop/left-punch-right-kick/left-punch-right-kick assets/player-sprite-4/adventurer-hand-combat-Sheet.png"
+player.src = "https://github.com/saphknight/left-punch-right-kick/blob/master/left-punch-right-kick%20assets/player-sprite-4/adventurer-hand-combat-Sheet.png"
 
 function sprite(options) {
     const that = {};
