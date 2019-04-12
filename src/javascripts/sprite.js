@@ -6,11 +6,11 @@ var background = new Image();
 
 function sprite(options) {
     var that = {},
-        frameIndex = 0,
-        tickCount = 0,
-        ticksPerFrame = options.ticksPerFrame || 0,
-        numberOfFrames = options.numberOfFrames || 1;
+    tickCount = 0,
+    ticksPerFrame = options.ticksPerFrame || 0;
 
+    that.numberOfFrames = options.numberOfFrames || 1;
+    that.frameIndex = 0;
     that.context = options.context.getContext("2d");
     that.height = options.height;
     that.width = options.width; 
@@ -26,7 +26,7 @@ function sprite(options) {
     that.render = () => {
         that.context.scale(that.scale,that.scale);
         that.context.drawImage(
-            that.image, that.sx + (frameIndex * that.width * that.reverse), 0, that.width, that.height, that.dx, that.dy, that.width, that.height
+            that.image, that.sx + (that.frameIndex * that.width * that.reverse), 0, that.width, that.height, that.dx, that.dy, that.width, that.height
         );
         that.context.scale(1/that.scale, 1/that.scale);
     } 
@@ -42,10 +42,10 @@ function sprite(options) {
         tickCount += 1;
         if (tickCount > ticksPerFrame) {
             tickCount = 0;
-            if (frameIndex < numberOfFrames - 1) {
-                frameIndex += 1;
+            if (that.frameIndex < that.numberOfFrames - 1) {
+                that.frameIndex += 1;
             } else {
-                frameIndex = 0;
+                that.frameIndex = 0;
             }
         }
     };
@@ -66,7 +66,7 @@ function sprite(options) {
         that.image = image;
         that.sx = x;
         that.sy = y;
-        frameIndex = 0;
+        that.frameIndex = 0;
     }
 
     return that;

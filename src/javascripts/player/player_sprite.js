@@ -1,5 +1,5 @@
 import sprite from '../sprite';
-import handlePress from '../interaction/keyPress';
+import { handlePress } from '../interaction/keyPress';
 
 var canvas = document.getElementById("game-canvas");
 

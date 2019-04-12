@@ -35,7 +35,7 @@ var spawnEnemy = () => {
 
         currentEnemies.push(possibleEnemies[Math.floor(Math.random() * 2)]);
         spawnEnemy();
-    }, (6000 / diff))
+    }, (6000 / Math.min(diff,8)))
 }
 
 spawnEnemy();

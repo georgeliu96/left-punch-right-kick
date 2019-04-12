@@ -2,6 +2,7 @@ import { handleKeydown, handleKeyup } from './player/player_sprite';
 import playerSprite from './player/player_sprite';
 // import { leftSprite, rightSprite }  from './player/enemy_sprite';
 import currentEnemies from './player/difficulty_enemies';
+import dyingEnemies from './interaction/keyPress';
 
 var canvas = document.getElementById("game-canvas");
 
@@ -24,6 +25,13 @@ var gameInterval = setInterval(() => {
         enemy.run(-enemy.reverse);
         enemy.render();
     })
+    dyingEnemies.forEach((enemy, idx) => {
+        enemy.update();
+        enemy.render();
+        if (enemy.frameIndex >= 9) {
+            dyingEnemies.splice(idx, 1);
+        }
+    });
 }, 15);
 
 var paused = false; 
@@ -50,6 +58,14 @@ function handleUI (e) {
                 enemy.run(-enemy.reverse);
                 enemy.render();
             })
+            dyingEnemies.forEach((enemy, idx) => {
+                enemy.update();
+                enemy.render();
+                if (enemy.frameIndex >= 9) {
+                    while(dyingEnemies)
+                    dyingEnemies.splice(idx, 1);
+                }
+            });
         }, 15);
     }
 }
