@@ -45,10 +45,7 @@ function handleUI (e) {
             playerSprite.update();
             playerSprite.render();
         
-            currentEnemies.forEach((enemy, index) => {
-                // debugger 
-                console.log(index)
-                console.log(enemy.dx)
+            currentEnemies.forEach(enemy => {
                 enemy.update();
                 enemy.run(-enemy.reverse);
                 enemy.render();

@@ -63,7 +63,6 @@ function sprite(options) {
     }
 
     that.action = (image, x, y) => {
-        debugger 
         that.image = image;
         that.sx = x;
         that.sy = y;
