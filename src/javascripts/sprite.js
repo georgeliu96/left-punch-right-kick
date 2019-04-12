@@ -55,7 +55,7 @@ function sprite(options) {
         var total_dx = (dir === 1) ? (
             that.dx
         ) : ((852 / that.scale) - that.dx)
-        if (total_dx < (400 / that.scale)) {
+        if (total_dx < 335) {
             that.dx += 1 * dir;
         }else {
             that.image = that.atkImg; 

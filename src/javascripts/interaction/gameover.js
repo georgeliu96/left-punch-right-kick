@@ -9,11 +9,8 @@ rightAtk.src = "../src/assets/heavybandit_attack.png";
 function gameover(enemies) {
     if (enemies.length) {
         for(let i = 0; i < Math.min(enemies.length, 2); i++) {
-            if (
-                (enemies[i].image.src === leftAtk.src || 
-                    enemies[i].image.src === rightAtk.src) && 
-                    currentEnemies[i].frameIndex === 7) {
-                debugger 
+            if ((enemies[i].image.src === leftAtk.src && enemies[i].frameIndex === 7) || 
+                (enemies[i].image.src === rightAtk.src && enemies[i].frameIndex === 0 )) {
                 return true;
             }
         }

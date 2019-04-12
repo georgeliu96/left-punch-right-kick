@@ -9,6 +9,8 @@ var canvas = document.getElementById("game-canvas");
 var background = new Image();
 background.src = "../src/assets/Background.png";
 
+var currentScore = 0;
+
 document.addEventListener("keydown", handleUI);
 document.addEventListener("keydown", handleKeydown);
 document.addEventListener("keyup", handleKeyup);
