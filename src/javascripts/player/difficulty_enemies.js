@@ -28,14 +28,17 @@ var defaultRight = {
 }
 var currentEnemies = [leftSprite];
 
-var diffInterval = setInterval(() => {
-    diff += 1;
+var spawnEnemy = () => {
     const possibleEnemies = [sprite(defaultLeft), sprite(defaultRight)];
-    if ((Math.random() * 10) < Math.log(diff)) {
-        currentEnemies.push(possibleEnemies[Math.floor(Math.random() * 2)])
-    }
-}, 1000);
+    setTimeout(() => {
+        diff += 0.1;
 
-setTimeout(() => clearInterval(diffInterval), 1000000);
+        currentEnemies.push(possibleEnemies[Math.floor(Math.random() * 2)]);
+        spawnEnemy();
+    }, (6000 / diff))
+}
+
+spawnEnemy();
+
 
 export default currentEnemies;

@@ -1,4 +1,5 @@
-import sprite from '../sprite'
+import sprite from '../sprite';
+import handlePress from '../interaction/keyPress';
 
 var canvas = document.getElementById("game-canvas");
 
@@ -23,47 +24,48 @@ var playerSprite = sprite({
     scale: 1.5
 });
 
-var keyLeft = false;
-var keyRight = false;
 
 function reset() {
-    setTimeout(() => playerSprite.action(player,0,0), 500);
+    playerSprite.action(player,0,0);
 }
+var keyLeft = false;
 
 function handleLeft(e) {
     if(e.type === "keyup") {
-        setTimeout(() => keyLeft = false, 500);
+        keyLeft = false;
     }else {
-        if (!keyLeft) {
-            punch();
+        if (!keyLeft && playerSprite.image === player) {
+            handlePress(e);
             keyLeft = true;
+            punch();
         }
     }
 }
+var keyRight = false;
 
 function handleRight(e) {
     if(e.type === "keyup") {
-        setTimeout(() => keyRight = false, 300);
+        keyRight = false;
     }else {
-        if (!keyRight) {
-            kick();
+        if (!keyRight && playerSprite.image === player) {
+            handlePress(e);
             keyRight = true;
+            kick();
         }
     }
 }
 
 function punch() {
     playerSprite.action(playerPunch, 0, 0);
-    reset();
+    setTimeout(reset,300);
 }
 
 function kick() {
     playerSprite.action(playerKick, 0, 0);
-    reset();
+    setTimeout(reset, 300);
 }
 
 export function handleKeydown(e) {
-
     if (e.code == "ArrowLeft" || e.code == "KeyA") {
         handleLeft(e);
     }else if (e.code == "ArrowRight" || e.code == "KeyD") {
