@@ -57,12 +57,12 @@ function handleRight(e) {
 
 function punch() {
     playerSprite.action(playerPunch, 0, 0);
-    setTimeout(reset,300);
+    setTimeout(reset,400);
 }
 
 function kick() {
     playerSprite.action(playerKick, 0, 0);
-    setTimeout(reset, 300);
+    setTimeout(reset, 400);
 }
 
 export function handleKeydown(e) {

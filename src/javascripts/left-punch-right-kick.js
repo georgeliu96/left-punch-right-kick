@@ -1,8 +1,8 @@
 import { handleKeydown, handleKeyup } from './player/player_sprite';
 import playerSprite from './player/player_sprite';
-// import { leftSprite, rightSprite }  from './player/enemy_sprite';
 import currentEnemies from './player/difficulty_enemies';
 import dyingEnemies from './interaction/keyPress';
+import gameover from './interaction/gameover';
 
 var canvas = document.getElementById("game-canvas");
 
@@ -12,6 +12,8 @@ background.src = "../src/assets/Background.png";
 document.addEventListener("keydown", handleUI);
 document.addEventListener("keydown", handleKeydown);
 document.addEventListener("keyup", handleKeyup);
+
+var firstAlert = true;
 
 var gameInterval = setInterval(() => {
 
@@ -32,7 +34,20 @@ var gameInterval = setInterval(() => {
             dyingEnemies.splice(idx, 1);
         }
     });
-}, 15);
+
+    if (gameover(currentEnemies)) {
+        if (firstAlert) { 
+            firstAlert = false; 
+            setTimeout(() => {
+                firstAlert = false; 
+                clearInterval(gameInterval);
+                alert("Game over!");
+                setTimeout(() => window.location.reload(), 3000);
+            },500);
+        }
+    }
+
+}, 20);
 
 var paused = false; 
 
@@ -66,18 +81,21 @@ function handleUI (e) {
                     dyingEnemies.splice(idx, 1);
                 }
             });
-        }, 15);
+            if (gameover(currentEnemies)) {
+                if (firstAlert) { 
+                    firstAlert = false; 
+                    setTimeout(() => {
+                        firstAlert = false; 
+                        clearInterval(gameInterval);
+                        alert("Game over!");
+                        setTimeout(() => window.location.reload(), 3000);
+                    },500);
+                }
+            }
+        }, 20);
     }
 }
 
-    // leftSprite.update();
-    // leftSprite.run(1)
-    // leftSprite.render();
-    // rightSprite.update();
-    // rightSprite.run(-1);
-    // rightSprite.render();
-
-    // that.context.clearRect(0, 0, 900, 616);
 
 
 export default canvas;
