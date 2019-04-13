@@ -1,6 +1,5 @@
 import currentEnemies from '../player/difficulty_enemies';
 
-// var canvas = document.getElementById("game-canvas");
 
 var dyingLeft = new Image ();
 dyingLeft.src = "../src/assets/lightbandit_death_left.png"

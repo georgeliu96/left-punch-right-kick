@@ -41,4 +41,3 @@ export var rightSprite = sprite({
     atkImg: rightAtk,
     scale: 1.2
 })
-

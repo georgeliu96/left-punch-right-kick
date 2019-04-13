@@ -3,6 +3,7 @@ import playerSprite from './player/player_sprite';
 import currentEnemies from './player/difficulty_enemies';
 import dyingEnemies from './interaction/keyPress';
 import gameover from './interaction/gameover';
+import arrows from './interaction/arrows';
 
 var canvas = document.getElementById("game-canvas");
 
@@ -28,6 +29,7 @@ var gameInterval = setInterval(() => {
         enemy.update();
         enemy.run(-enemy.reverse);
         enemy.render();
+        arrows(enemy.dx)
     })
     dyingEnemies.forEach((enemy, idx) => {
         enemy.update();
@@ -74,6 +76,7 @@ function handleUI (e) {
                 enemy.update();
                 enemy.run(-enemy.reverse);
                 enemy.render();
+                arrows(enemy.dx);
             })
             dyingEnemies.forEach((enemy, idx) => {
                 enemy.update();

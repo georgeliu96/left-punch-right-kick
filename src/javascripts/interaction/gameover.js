@@ -1,5 +1,3 @@
-import currentEnemies from '../player/difficulty_enemies';
-
 var leftAtk = new Image ();
 leftAtk.src = "../src/assets/lightbandit_attack_left.png";
 
