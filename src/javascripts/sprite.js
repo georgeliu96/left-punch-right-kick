@@ -6,9 +6,9 @@ var background = new Image();
 
 function sprite(options) {
     var that = {},
-    tickCount = 0,
-    ticksPerFrame = options.ticksPerFrame || 0;
+    tickCount = 0;
 
+    that.ticksPerFrame = options.ticksPerFrame || 0;
     that.numberOfFrames = options.numberOfFrames || 1;
     that.frameIndex = 0;
     that.context = options.context.getContext("2d");
@@ -40,7 +40,7 @@ function sprite(options) {
 
     that.update = () => {
         tickCount += 1;
-        if (tickCount > ticksPerFrame) {
+        if (tickCount > that.ticksPerFrame) {
             tickCount = 0;
             if (that.frameIndex < that.numberOfFrames - 1) {
                 that.frameIndex += 1;
@@ -56,9 +56,10 @@ function sprite(options) {
             that.dx
         ) : ((852 / that.scale) - that.dx)
         if (total_dx < 335) {
-            that.dx += 1 * dir;
+            that.dx += 3 * dir;
         }else {
             that.image = that.atkImg; 
+            that.ticksPerFrame = 1;
         }
     }
 

@@ -15,19 +15,18 @@ litArrowRight.src = "../src/assets/keyboard-white-lit-right.png";
 
 function arrows(dx) {
     var image = "";
-    if (dx < 311) {
+    if (dx < 290) {
         image = arrowLeft;
-    }else if (dx > 311 && dx < 350) {
+    }else if (dx > 280 && dx < 350) {
         image = litArrowLeft;
-    }else if (dx < 395 && dx > 350) {
+    }else if (dx < 420 && dx > 350) {
         image = litArrowRight;
     }else {
         image = arrowRight;
     }
-    debugger 
     ctx.scale(1.2, 1.2);
     ctx.drawImage(
-        image, 0, 0, 16, 16, dx, 300, 32, 32
+        image, 0, 0, 16, 16, dx + 10, 300, 32, 32
     );
     ctx.scale(1/1.2, 1/1.2);
 }
