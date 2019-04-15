@@ -8,7 +8,7 @@ import sprite from './sprite';
 import { arrowExplode } from './interaction/arrow_explode';
 
 var audio = document.getElementById("audio");
-setTimeout(() => audio.play(), 500);
+setTimeout(() => audio.play(), 1000);
 
 
 var canvas = document.getElementById("game-canvas"), 

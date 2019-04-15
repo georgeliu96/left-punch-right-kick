@@ -26,8 +26,22 @@
 <body class="body">
     <div class="background"></div>
     <h1 class="header">Left Punch Right Kick</h1>
-    <canvas id="game-canvas" width="900" height="600">
-    </canvas>
+    <div class="middle-section"> 
+            <div class="instructions-div">
+                <p class="instructions">Press M to mute the music<br><br>
+                Press ← or → when they light up<br><br>
+                Pressing "A" or "D" also works</p>
+            </div>
+            <canvas id="game-canvas" width="900" height="600"></canvas>
+            <div class="links">
+                <a href="https://www.github.com/saphknight">
+                    <img class="git link" src="https://camo.githubusercontent.com/7710b43d0476b6f6d4b4b2865e35c108f69991f3/68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67">
+                </a>
+                <a href="https://www.linkedin.com/in/george-liu-740340183/">
+                    <img class="linkedin link" src="https://image.flaticon.com/icons/svg/56/56591.svg">
+                </a>
+            </div>
+        </div>
     <audio id="audio" src='../../left-punch-right-kick/src/assets/background.mp3'></audio>
     <div id="current-score">0</div>
     <script src="./dist/bundle.js"></script>      
