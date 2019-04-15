@@ -1,9 +1,9 @@
 var canvas = document.getElementById("game-canvas")
 
 var leftHit = new Image();
-leftHit.src = "../src/assets/blastgreenfull.png"
+leftHit.src = "./src/assets/blastgreenfull.png"
 var rightHit = new Image();
-rightHit.src = "../src/assets/orangeblastfull.png"
+rightHit.src = "./src/assets/orangeblastfull.png"
 
 export var leftHitSprite = {
     context: canvas,

@@ -1,5 +1,5 @@
 var explosion = new Image();
-explosion.src = "../src/assets/spritesheet.png";
+explosion.src = "./src/assets/spritesheet.png";
 
 var canvas = document.getElementById("game-canvas");
 
