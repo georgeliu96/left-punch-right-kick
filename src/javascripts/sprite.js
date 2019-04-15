@@ -2,7 +2,7 @@ var canvas = document.getElementById("game-canvas"),
     ctx = canvas.getContext("2d");
 
 var background = new Image();
-    background.src = "../src/assets/Background.png";
+    background.src = "../../left-punch-right-kick/src/assets/Background.png";
 
 function sprite(options) {
 

@@ -5,13 +5,13 @@ import { leftHitSprite, rightHitSprite } from '../interaction/hit_sprite';
 var canvas = document.getElementById("game-canvas");
 
 var player = new Image(); 
-player.src = "../src/assets/player-sprite-3/adventurer-v1.5-Sheet.png"
+player.src = "../../left-punch-right-kick/src/assets/player-sprite-3/adventurer-v1.5-Sheet.png"
 
 var playerPunch = new Image();
-playerPunch.src="../src/assets/player-sprite-4/reverse-punch.png"
+playerPunch.src="../../left-punch-right-kick/src/assets/player-sprite-4/reverse-punch.png"
 
 var playerKick = new Image();
-playerKick.src="../src/assets/player-sprite-4/forward-kick.png"
+playerKick.src="../../left-punch-right-kick/src/assets/player-sprite-4/forward-kick.png"
 
 var playerSprite = sprite({
     context: canvas,

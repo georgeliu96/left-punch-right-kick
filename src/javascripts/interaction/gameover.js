@@ -1,8 +1,8 @@
 var leftAtk = new Image ();
-leftAtk.src = "../src/assets/lightbandit_attack_left.png";
+leftAtk.src = "../../left-punch-right-kick/src/assets/lightbandit_attack_left.png";
 
 var rightAtk = new Image ();
-rightAtk.src = "../src/assets/heavybandit_attack.png";
+rightAtk.src = "../../left-punch-right-kick/src/assets/heavybandit_attack.png";
 
 function gameover(enemies) {
     if (enemies.length) {
