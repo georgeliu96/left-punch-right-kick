@@ -1,9 +1,13 @@
-import { handleKeydown, handleKeyup } from './player/player_sprite';
+import { handleKeydown, handleKeyup, hitSprites } from './player/player_sprite';
 import playerSprite from './player/player_sprite';
 import currentEnemies, { spawnEnemy } from './player/difficulty_enemies';
 import dyingEnemies from './interaction/keyPress';
 import gameover from './interaction/gameover';
 import arrows from './interaction/arrows';
+import sprite from './sprite';
+import { arrowExplode } from './interaction/arrow_explode';
+
+var audio = document.getElementById("audio");
 
 var canvas = document.getElementById("game-canvas"), 
     ctx = canvas.getContext("2d");
@@ -20,15 +24,20 @@ play.onload = start;
 var currentScore = 0;
 
 
-// document.addEventListener("keydown", handleUI);
 document.addEventListener("keydown", handleKeydown);
 document.addEventListener("keyup", handleKeyup);
+document.addEventListener('keydown', function(e) {
+    if(e.code === "KeyM") {
+        audio.muted = !audio.muted;
+    }
+})
 
 var firstAlert = true;
 var gameInterval = "";
 export var started = false; 
 
 function start() {
+    audio.play().then(() => audio.loop = true);
     ctx.clearRect(0, 0, 900, 616);
     ctx.drawImage(background, 0, 0);
     ctx.scale(3,3);
@@ -49,6 +58,8 @@ function handleStart(e) {
     }
 }
 
+var explosions = [];
+
 function startInterval() {
     gameInterval = setInterval(() => {
 
@@ -61,9 +72,14 @@ function startInterval() {
             enemy.update();
             enemy.run(-enemy.reverse);
             enemy.render();
-            arrows(enemy.dx)
+            arrows(enemy.dx);
         })
         dyingEnemies.forEach((enemy, idx) => {
+            const newArrow = Object.assign({}, arrowExplode);
+            newArrow.dx = (enemy.dx * 1.2) - 20;
+            if (enemy.frameIndex === 0) {
+                explosions.push(sprite(newArrow));
+            }
             enemy.update();
             enemy.render();
             if (enemy.frameIndex >= 9) {
@@ -71,6 +87,22 @@ function startInterval() {
                 dyingEnemies.splice(idx, 1);
             }
         });
+
+        explosions.forEach((expo,idx) => {
+            expo.update();
+            expo.render();
+            if (expo.yIndex === 9) {
+                explosions.splice(idx, 1);
+            }
+        })
+
+        hitSprites.forEach((hit, idx) => {
+            hit.update();
+            hit.render();
+            if (hit.frameIndex >= 7) {
+                hitSprites.splice(idx,1);
+            }
+        })
     
         if (gameover(currentEnemies)) {
             if (firstAlert) { 
@@ -80,7 +112,7 @@ function startInterval() {
                     clearInterval(gameInterval);
                     alert("Game over!");
                     setTimeout(() => window.location.reload(), 3000);
-                },500);
+                },300);
             }
         }
     
@@ -90,27 +122,6 @@ function startInterval() {
 }
 
 start();
-
-
-// export var paused = false; 
-
-// function handleUI (e) {
-//     const newSpawn = spawnEnemy;
-//     if (e.code === "KeyP" && (!paused) ) {
-//         paused = true;
-//         clearInterval(gameInterval);
-//         playerSprite.render();
-//         currentEnemies.forEach(enemy => {
-//             enemy.render();
-//         })
-//     }else if (e.code === "KeyP") {
-//         paused = false;
-//         startInterval();
-//         debugger 
-//         newSpawn();
-//     }
-// }
-
 
 
 export default canvas;

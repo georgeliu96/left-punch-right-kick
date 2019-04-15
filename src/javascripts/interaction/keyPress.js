@@ -1,6 +1,5 @@
 import currentEnemies from '../player/difficulty_enemies';
 
-
 var dyingLeft = new Image ();
 dyingLeft.src = "../src/assets/lightbandit_death_left.png"
 
@@ -19,6 +18,7 @@ export var handlePress = (e) => {
                     currentEnemies[i].sx = 0;
                     currentEnemies[i].reverse = 1;
                     currentEnemies[i].numberOfFrames = 10;
+
                     dyingEnemies.push(currentEnemies[i]);
                     currentEnemies.splice(i, 1);
                 }

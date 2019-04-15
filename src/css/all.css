@@ -1,0 +1,35 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.background {
+    height: 100%;
+    width: 100vw;
+    background-image: url(../assets/Background.png);
+    filter: blur(4px);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: 0;
+}
+
+.header {
+    z-index: 100;
+    color: white;
+    margin: 0 auto;
+    padding-top: 5vh;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#current-score{
+    color: white;
+    z-index: 100;
+    margin: 0 auto;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Press Start 2P', cursive;
+}
+

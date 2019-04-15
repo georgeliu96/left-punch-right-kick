@@ -1,5 +1,6 @@
 import sprite from '../sprite';
 import { handlePress } from '../interaction/keyPress';
+import { leftHitSprite, rightHitSprite } from '../interaction/hit_sprite';
 
 var canvas = document.getElementById("game-canvas");
 
@@ -29,6 +30,7 @@ function reset() {
     playerSprite.action(player,0,0);
 }
 var keyLeft = false;
+export var hitSprites = [];
 
 function handleLeft(e) {
     if(e.type === "keyup") {
@@ -57,11 +59,13 @@ function handleRight(e) {
 
 function punch() {
     playerSprite.action(playerPunch, 0, 0);
+    hitSprites.push(sprite(leftHitSprite));
     setTimeout(reset,400);
 }
 
 function kick() {
     playerSprite.action(playerKick, 0, 0);
+    hitSprites.push(sprite(rightHitSprite));
     setTimeout(reset, 400);
 }
 

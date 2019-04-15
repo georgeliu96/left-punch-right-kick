@@ -1,6 +1,5 @@
 import sprite from '../sprite';
 import { leftSprite } from './enemy_sprite';
-import { started } from '../left-punch-right-kick';
 
 var canvas = document.getElementById("game-canvas");
 
@@ -29,6 +28,10 @@ var defaultRight = {
 }
 var currentEnemies = [leftSprite];
 
+export var currentDiff = () => {
+    return diff;
+}
+
 export var spawnEnemy = () => {
     const possibleEnemies = [sprite(defaultLeft), sprite(defaultRight)];
     setTimeout(() => {
@@ -36,7 +39,7 @@ export var spawnEnemy = () => {
         
         currentEnemies.push(possibleEnemies[Math.floor(Math.random() * 2)]);
             spawnEnemy();
-        }, (6000 / Math.min(diff,8)))
+        }, (5000 / Math.min(diff,10)))
 }
 
 

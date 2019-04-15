@@ -5,6 +5,7 @@ var background = new Image();
     background.src = "../src/assets/Background.png";
 
 function sprite(options) {
+
     var that = {},
     tickCount = 0;
 
@@ -21,12 +22,13 @@ function sprite(options) {
     that.atkImg = options.atkImg || "";
     that.reverse = options.reverse || 1;
     that.scale = options.scale || 1;
+    that.yIndex = options.yIndex || null;
 
 
     that.render = () => {
         that.context.scale(that.scale,that.scale);
         that.context.drawImage(
-            that.image, that.sx + (that.frameIndex * that.width * that.reverse), 0, that.width, that.height, that.dx, that.dy, that.width, that.height
+            that.image, that.sx + (that.frameIndex * that.width * that.reverse), that.yIndex ? ((that.yIndex - 1) * that.height) : 0, that.width, that.height, that.dx, that.dy, that.width, that.height
         );
         that.context.scale(1/that.scale, 1/that.scale);
     } 
@@ -45,6 +47,9 @@ function sprite(options) {
             if (that.frameIndex < that.numberOfFrames - 1) {
                 that.frameIndex += 1;
             } else {
+                if (that.yIndex) {
+                    that.yIndex += 1;
+                }
                 that.frameIndex = 0;
             }
         }
