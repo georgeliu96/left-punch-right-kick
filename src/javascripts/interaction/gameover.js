@@ -1,8 +1,8 @@
 var leftAtk = new Image ();
-leftAtk.src = "./src/assets/lightbandit_attack_left.png";
+leftAtk.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/lightbandit_attack_left.png";
 
 var rightAtk = new Image ();
-rightAtk.src = "./src/assets/heavybandit_attack.png";
+rightAtk.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/heavybandit_attack.png";
 
 function gameover(enemies) {
     if (enemies.length) {

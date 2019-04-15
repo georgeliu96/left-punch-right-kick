@@ -2,16 +2,16 @@ var canvas = document.getElementById("game-canvas"),
     ctx = canvas.getContext("2d");
 
 var arrowLeft = new Image ();
-arrowLeft.src = "./src/assets/keyboard-white-left.png";
+arrowLeft.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/keyboard-white-left.png";
 
 var arrowRight = new Image ();
-arrowRight.src = "./src/assets/keyboard-white-right.png";
+arrowRight.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/keyboard-white-right.png";
 
 var litArrowLeft = new Image ();
-litArrowLeft.src = "./src/assets/keyboard-white-lit-left.png";
+litArrowLeft.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/keyboard-white-lit-left.png";
 
 var litArrowRight = new Image ();
-litArrowRight.src = "./src/assets/keyboard-white-lit-right.png";
+litArrowRight.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/keyboard-white-lit-right.png";
 
 function arrows(dx) {
     var image = "";

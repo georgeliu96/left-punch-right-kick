@@ -1,5 +1,5 @@
 var explosion = new Image();
-explosion.src = "./src/assets/spritesheet.png";
+explosion.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/spritesheet.png";
 
 var canvas = document.getElementById("game-canvas");
 
