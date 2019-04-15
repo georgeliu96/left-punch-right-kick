@@ -15,10 +15,10 @@ var canvas = document.getElementById("game-canvas"),
     ctx = canvas.getContext("2d");
 
 var background = new Image();
-background.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/Background.png";
+background.src = "../src/assets/Background.png";
 
 var play = new Image();
-play.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/play-button.png"
+play.src = "../src/assets/play-button.png"
 
 play.onload = start;
 

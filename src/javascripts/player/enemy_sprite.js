@@ -3,10 +3,10 @@ import sprite from '../sprite'
 var canvas = document.getElementById("game-canvas");
 
 var leftEnemy = new Image ();
-leftEnemy.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/lightbandit_run_left.png";
+leftEnemy.src = "../src/assets/lightbandit_run_left.png";
 
 var leftAtk = new Image ();
-leftAtk.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/lightbandit_attack_left.png";
+leftAtk.src = "../src/assets/lightbandit_attack_left.png";
 
 export var leftSprite = sprite({
     context: canvas,
@@ -24,10 +24,10 @@ export var leftSprite = sprite({
 });
 
 var rightEnemy = new Image ();
-rightEnemy.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/heavybandit_run.png"
+rightEnemy.src = "../src/assets/heavybandit_run.png"
 
 var rightAtk = new Image ();
-rightAtk.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/heavybandit_attack.png";
+rightAtk.src = "../src/assets/heavybandit_attack.png";
 
 export var rightSprite = sprite({
     context: canvas,

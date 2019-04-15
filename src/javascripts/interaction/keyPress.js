@@ -1,10 +1,10 @@
 import currentEnemies from '../player/difficulty_enemies';
 
 var dyingLeft = new Image ();
-dyingLeft.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/lightbandit_death_left.png"
+dyingLeft.src = "../src/assets/lightbandit_death_left.png"
 
 var dyingRight = new Image ();
-dyingRight.src = "https://github.com/saphknight/left-punch-right-kick/tree/master/src/assets/heavybandit_death.png"
+dyingRight.src = "../src/assets/heavybandit_death.png"
 
 var dyingEnemies = [];
 
