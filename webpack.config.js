@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     context: __dirname,
-    entry: './src/javascripts/left-punch-right-kick.js',
+    entry: '../src/javascripts/left-punch-right-kick.js',
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: 'bundle.js'

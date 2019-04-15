@@ -33,3 +33,44 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+.middle-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.instructions-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: calc((100vw - 900px) / 14);
+    z-index: 100;
+    width: calc((100vw - 900px) * 3 / 7);
+}
+
+.instructions {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding-right: calc((100vw - 900px) / 14);
+    width: calc((100vw - 900px) * 3 / 7);;
+}
+
+.link {
+    filter: invert(100%);
+    padding: 10px;
+    margin: 35%;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.link:hover {
+    background: rgba(92, 92, 92, 0.5)
+}

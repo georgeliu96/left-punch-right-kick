@@ -8,6 +8,8 @@ import sprite from './sprite';
 import { arrowExplode } from './interaction/arrow_explode';
 
 var audio = document.getElementById("audio");
+setTimeout(() => audio.play(), 500);
+
 
 var canvas = document.getElementById("game-canvas"), 
     ctx = canvas.getContext("2d");
@@ -37,13 +39,13 @@ var gameInterval = "";
 export var started = false; 
 
 function start() {
-    audio.play().then(() => audio.loop = true);
     ctx.clearRect(0, 0, 900, 616);
     ctx.drawImage(background, 0, 0);
     ctx.scale(3,3);
     ctx.drawImage(play, 130, 100);
     ctx.scale(1/3,1/3);
     canvas.addEventListener("click", handleStart);
+
 }
 
 function handleStart(e) {
