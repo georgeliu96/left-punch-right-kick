@@ -2,7 +2,7 @@ import { handleKeydown, handleKeyup, hitSprites } from './player/player_sprite';
 import playerSprite from './player/player_sprite';
 import currentEnemies, { spawnEnemy } from './player/difficulty_enemies';
 import dyingEnemies from './interaction/keyPress';
-import gameover from './interaction/gameover';
+import gameover, {renderGameover} from './interaction/gameover';
 import arrows from './interaction/arrows';
 import sprite from './sprite';
 import { arrowExplode } from './interaction/arrow_explode';
@@ -74,14 +74,14 @@ function startInterval() {
         playerSprite.render();
     
         currentEnemies.forEach(enemy => {
+            enemy.render();
             enemy.update();
             enemy.run(enemy.key);
-            enemy.render();
             arrows(enemy.dx, enemy.key);
         })
         dyingEnemies.forEach((enemy, idx) => {
             const newArrow = Object.assign({}, arrowExplode);
-            newArrow.dx = (enemy.dx * enemy.scale) - 20;
+            newArrow.dx = (enemy.dx * enemy.scale);
             if (enemy.frameIndex === 0) {
                 explosions.push(sprite(newArrow));
             }
@@ -110,15 +110,10 @@ function startInterval() {
         })
     
         if (gameover(currentEnemies)) {
-            if (firstAlert) { 
-                firstAlert = false; 
-                setTimeout(() => {
-                    firstAlert = false; 
-                    clearInterval(gameInterval);
-                    alert("Game over!");
-                    setTimeout(() => window.location.reload(), 3000);
-                },300);
-            }
+            setTimeout(() => {
+                clearInterval(gameInterval);
+                renderGameover();
+            },300);
         }
     
         document.getElementById("current-score").innerHTML = currentScore;

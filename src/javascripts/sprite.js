@@ -62,9 +62,9 @@ function sprite(options) {
             ) : (850 - (that.dx * that.scale));
         const dir = (key === "left" || key === "down") ? 1 : -1;
         if (key === "down" && total_dx < 380) {
-            that.dx += 4 * dir / that.scale;
+            that.dx += 6 * dir / that.scale;
         }else if (key !== "down" && total_dx < 400) {
-            that.dx += 4 * dir / that.scale;
+            that.dx += 6 * dir / that.scale;
         }else {
             that.image = that.atkImg; 
             that.ticksPerFrame = 1;
