@@ -8,8 +8,11 @@ import sprite from './sprite';
 import { arrowExplode } from './interaction/arrow_explode';
 
 var audio = document.getElementById("audio");
+audio.addEventListener("ended", function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
 setTimeout(() => audio.play(), 1000);
-
 
 var canvas = document.getElementById("game-canvas"), 
     ctx = canvas.getContext("2d");
@@ -72,9 +75,9 @@ function startInterval() {
     
         currentEnemies.forEach(enemy => {
             enemy.update();
-            enemy.run(-enemy.reverse);
+            enemy.run(enemy.key);
             enemy.render();
-            arrows(enemy.dx);
+            arrows(enemy.dx, enemy.key);
         })
         dyingEnemies.forEach((enemy, idx) => {
             const newArrow = Object.assign({}, arrowExplode);

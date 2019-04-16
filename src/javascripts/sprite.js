@@ -5,7 +5,6 @@ var background = new Image();
     background.src = "../../left-punch-right-kick/src/assets/Background.png";
 
 function sprite(options) {
-
     var that = {},
     tickCount = 0;
 
@@ -23,6 +22,7 @@ function sprite(options) {
     that.reverse = options.reverse || 1;
     that.scale = options.scale || 1;
     that.yIndex = options.yIndex || null;
+    that.key = options.key || "";
 
 
     that.render = () => {
@@ -56,12 +56,15 @@ function sprite(options) {
     };
 
     //dir = -1 || 1 for left || right respectively
-    that.run = (dir) => {
-        var total_dx = (dir === 1) ? (
-            that.dx
-        ) : ((852 / that.scale) - that.dx)
-        if (total_dx < 335) {
-            that.dx += 3 * dir;
+    that.run = (key) => {
+        var total_dx = (key === "left" || key === "down") ? (
+            (that.dx) * that.scale 
+            ) : (850 - (that.dx * that.scale));
+        const dir = (key === "left" || key === "down") ? 1 : -1;
+        if (key === "down" && total_dx < 380) {
+            that.dx += 4 * dir / that.scale;
+        }else if (key !== "down" && total_dx < 400) {
+            that.dx += 4 * dir / that.scale;
         }else {
             that.image = that.atkImg; 
             that.ticksPerFrame = 1;
