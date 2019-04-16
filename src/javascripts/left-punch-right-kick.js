@@ -81,13 +81,13 @@ function startInterval() {
         })
         dyingEnemies.forEach((enemy, idx) => {
             const newArrow = Object.assign({}, arrowExplode);
-            newArrow.dx = (enemy.dx * 1.2) - 20;
+            newArrow.dx = (enemy.dx * enemy.scale) - 20;
             if (enemy.frameIndex === 0) {
                 explosions.push(sprite(newArrow));
             }
             enemy.update();
             enemy.render();
-            if (enemy.frameIndex >= 9) {
+            if (enemy.frameIndex >= (enemy.numberOfFrames - 1)) {
                 currentScore += 1;
                 dyingEnemies.splice(idx, 1);
             }

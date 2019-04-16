@@ -10,7 +10,7 @@ var dyingUp = new Image ();
 dyingUp.src = "../../left-punch-right-kick/src/assets/minotaur-death.png";
 
 var dyingDown = new Image ();
-dyingDown.src = "../../left-punch-right-kick/src/assets/Skeleton-Dead.png";
+dyingDown.src = "../../left-punch-right-kick/src/assets/cyclops_death.png";
 
 var dyingEnemies = [];
 
@@ -18,7 +18,7 @@ export var handlePress = (e) => {
     if (currentEnemies.length > 0) {
         for(let i = 0; i < Math.min(currentEnemies.length, 2); i++) {
             if (e.code === "ArrowLeft" || e.code === "KeyA") {
-                if(currentEnemies[i].dx > 280 && currentEnemies[i].key === "left") {
+                if(((currentEnemies[i].dx  + currentEnemies[i].width) * currentEnemies[i].scale) > 350 && currentEnemies[i].key === "left") {
                     currentEnemies[i].image = dyingLeft;
                     currentEnemies[i].frameIndex = 0;
                     currentEnemies[i].sx = 0;
@@ -29,7 +29,7 @@ export var handlePress = (e) => {
                     currentEnemies.splice(i, 1);
                 }
             }else if (e.code === "ArrowUp" || e.code === "KeyW"){
-                if(currentEnemies[i].dx < 420 && currentEnemies[i].key === "up") {
+                if((currentEnemies[i].dx * currentEnemies[i].scale) < 600 && currentEnemies[i].key === "up") {
                     currentEnemies[i].image = dyingUp;
                     currentEnemies[i].numberOfFrames = 6; 
                     currentEnemies.frameIndex = 0;
@@ -37,16 +37,15 @@ export var handlePress = (e) => {
                     currentEnemies.splice(i,1);
                 }
             }else if (e.code === "ArrowDown" || e.code === "KeyD"){
-                if(currentEnemies[i].dx > 280 && currentEnemies[i].key === "down") {
+                if(((currentEnemies[i].dx + currentEnemies[i].width)* currentEnemies[i].scale) > 350 && currentEnemies[i].key === "down") {
                     currentEnemies[i].image = dyingDown; 
-                    currentEnemies[i].numberOfFrames = 15;
-                    currentEnemies[i].ticksPerFrame = 1;
+                    currentEnemies[i].numberOfFrames = 6;
                     currentEnemies[i].frameIndex = 0;
                     dyingEnemies.push(currentEnemies[i]);
                     currentEnemies.splice(i,1);  
                 }
             }else {
-                if(currentEnemies[i].dx < 420 && currentEnemies[i].key === "right") {
+                if((currentEnemies[i].dx * currentEnemies[i].scale) < 600 && currentEnemies[i].key === "right") {
                     currentEnemies[i].image = dyingRight;
                     currentEnemies[i].numberOfFrames = 10;
                     currentEnemies[i].frameIndex = 0;

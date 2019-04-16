@@ -30,7 +30,7 @@ function arrows(dx, key) {
     var image = "";
     const scale = (key === "left" || key === "right") ? 1 : (key === "down") ? (1.5/1.2) : (1/1.2) 
     dx = dx * scale;
-    if (dx < 290) {
+    if (dx < 280) {
         if (key === "left") {
             image = arrowLeft;
         }else {
