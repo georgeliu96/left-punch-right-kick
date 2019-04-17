@@ -38,7 +38,6 @@ document.addEventListener('keydown', function(e) {
     }
 })
 
-var firstAlert = true;
 var gameInterval = "";
 export var started = false; 
 
@@ -64,6 +63,7 @@ function handleStart(e) {
 }
 
 var explosions = [];
+var ended = false;
 
 function startInterval() {
     gameInterval = setInterval(() => {
@@ -108,10 +108,11 @@ function startInterval() {
             }
         })
     
-        if (gameover(currentEnemies)) {
+        if (gameover(currentEnemies) && !ended) {
+            ended = true;
             setTimeout(() => {
                 clearInterval(gameInterval);
-                renderGameover();
+                renderGameover(currentScore);
             },300);
         }
     

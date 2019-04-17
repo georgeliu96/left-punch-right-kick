@@ -24,6 +24,10 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+.header:hover {
+    cursor: default;
+}
+
 #current-score{
     color: white;
     z-index: 100;
@@ -33,6 +37,10 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+#current-score:hover {
+    cursor: default;
+}
+
 .middle-section {
     display: flex;
     justify-content: space-around;
@@ -40,11 +48,23 @@
 
 .instructions-div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-left: calc((100vw - 900px) / 14);
     z-index: 100;
     width: calc((100vw - 900px) * 3 / 7);
+}
+
+.instructions-div:hover {
+    cursor: default;
+}
+
+.instructions-header{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 24px;
+    padding-bottom: 5vh;
 }
 
 .instructions {
@@ -73,4 +93,27 @@
 
 .link:hover {
     background: rgba(92, 92, 92, 0.5)
+}
+
+.hiscore-form {
+    z-index: 10000;
+    position: absolute; 
+    left: calc(46.4%);
+    top: 38vh;
+    display: none;
+}
+
+.hiscore {
+    /* display: none; */
+    padding: 8px;
+    border-radius: 10px;
+    font-family: "Press Start 2P";
+    font-size: 14px;
+    text-align: center;
+    width: 35%;
+    letter-spacing: -2px;
+}
+
+.hiscore:focus {
+    outline: 0;
 }
