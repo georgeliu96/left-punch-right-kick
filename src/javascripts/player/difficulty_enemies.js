@@ -11,7 +11,7 @@ export var spawnEnemy = () => {
         diff += 0.1;
         currentEnemies.push(possibleEnemies[Math.floor(Math.random() * 4)]);
         spawnEnemy();
-        }, (2000 / Math.min(diff,5)))
+        }, (2000 / Math.min(diff,4)))
 }
 
 

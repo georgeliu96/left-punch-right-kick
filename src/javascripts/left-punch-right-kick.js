@@ -80,8 +80,8 @@ function startInterval() {
         })
         dyingEnemies.forEach((enemy, idx) => {
             const newArrow = Object.assign({}, arrowExplode);
-            newArrow.dx = ((enemy.dx * enemy.scale) / 2) - 32;
-            if (enemy.frameIndex === 0) {
+            if (enemy.frameIndex === 0 && enemy.tickCount === 3) {
+                newArrow.dx = Math.random() * 280 + 10;
                 explosions.push(sprite(newArrow));
             }
             enemy.update();

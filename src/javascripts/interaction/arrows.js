@@ -31,13 +31,13 @@ function arrows(dx, scale, width, key) {
     
     //x pos on screen between 0-900
     dx = dx * scale;
-    if ((dx + (width * scale)) < 325) {
+    if ((dx + (width * scale)) < 350) {
         if (key === "left") {
             image = arrowLeft;
         }else {
             image = arrowDown;
         }
-    }else if ((dx + (width * scale)) > 325 && dx < 425) {
+    }else if ((dx + (width * scale)) > 350 && dx < 425) {
         if (key === "left") {
             image = litArrowLeft;
         }else {

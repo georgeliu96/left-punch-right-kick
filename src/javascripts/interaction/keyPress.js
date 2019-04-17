@@ -18,12 +18,13 @@ export var handlePress = (e) => {
     if (currentEnemies.length > 0) {
         for(let i = 0; i < Math.min(currentEnemies.length, 2); i++) {
             if (e.code === "ArrowLeft" || e.code === "KeyA") {
-                if(((currentEnemies[i].dx  + currentEnemies[i].width) * currentEnemies[i].scale) > 325 && currentEnemies[i].key === "left") {
+                if(((currentEnemies[i].dx  + currentEnemies[i].width) * currentEnemies[i].scale) > 350 && currentEnemies[i].key === "left") {
                     currentEnemies[i].image = dyingLeft;
                     currentEnemies[i].frameIndex = 0;
                     currentEnemies[i].sx = 0;
                     currentEnemies[i].reverse = 1;
                     currentEnemies[i].numberOfFrames = 10;
+                    currentEnemies[i].tickCount = 0;
 
                     dyingEnemies.push(currentEnemies[i]);
                     currentEnemies.splice(i, 1);
@@ -33,14 +34,18 @@ export var handlePress = (e) => {
                     currentEnemies[i].image = dyingUp;
                     currentEnemies[i].numberOfFrames = 6; 
                     currentEnemies[i].frameIndex = 0;
+                    currentEnemies[i].tickCount = 0;
+
                     dyingEnemies.push(currentEnemies[i]);
                     currentEnemies.splice(i,1);
                 }
             }else if (e.code === "ArrowDown" || e.code === "KeyS"){
-                if(((currentEnemies[i].dx + currentEnemies[i].width)* currentEnemies[i].scale) > 325 && currentEnemies[i].key === "down") {
+                if(((currentEnemies[i].dx + currentEnemies[i].width)* currentEnemies[i].scale) > 350 && currentEnemies[i].key === "down") {
                     currentEnemies[i].image = dyingDown; 
                     currentEnemies[i].numberOfFrames = 6;
                     currentEnemies[i].frameIndex = 0;
+                    currentEnemies[i].tickCount = 0;
+
                     dyingEnemies.push(currentEnemies[i]);
                     currentEnemies.splice(i,1);  
                 }
@@ -51,6 +56,8 @@ export var handlePress = (e) => {
                     currentEnemies[i].frameIndex = 0;
                     currentEnemies[i].sx = 432;
                     currentEnemies[i].reverse = -1;
+                    currentEnemies[i].tickCount = 0;
+
                     dyingEnemies.push(currentEnemies[i]);
                     currentEnemies.splice(i,1);
                 }
