@@ -30,7 +30,7 @@ export var handlePress = (e) => {
                     currentEnemies.splice(i, 1);
                 }
             }else if (e.code === "ArrowUp" || e.code === "KeyW"){
-                if((currentEnemies[i].dx * currentEnemies[i].scale) < 600 && currentEnemies[i].key === "up") {
+                if((currentEnemies[i].dx * currentEnemies[i].scale) < 575 && currentEnemies[i].key === "up") {
                     currentEnemies[i].image = dyingUp;
                     currentEnemies[i].numberOfFrames = 6; 
                     currentEnemies[i].frameIndex = 0;
@@ -50,7 +50,7 @@ export var handlePress = (e) => {
                     currentEnemies.splice(i,1);  
                 }
             }else {
-                if((currentEnemies[i].dx * currentEnemies[i].scale) < 600 && currentEnemies[i].key === "right") {
+                if((currentEnemies[i].dx * currentEnemies[i].scale) < 575 && currentEnemies[i].key === "right") {
                     currentEnemies[i].image = dyingRight;
                     currentEnemies[i].numberOfFrames = 10;
                     currentEnemies[i].frameIndex = 0;

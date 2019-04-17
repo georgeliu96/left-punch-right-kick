@@ -43,7 +43,7 @@ function arrows(dx, scale, width, key) {
         }else {
             image = litArrowDown;
         }
-    }else if (dx > 450 && dx < 600) {
+    }else if (dx > 450 && dx < 575) {
         if (key === "right") {
             image = litArrowRight;
         }else {
