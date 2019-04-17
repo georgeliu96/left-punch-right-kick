@@ -80,7 +80,7 @@ function startInterval() {
         })
         dyingEnemies.forEach((enemy, idx) => {
             const newArrow = Object.assign({}, arrowExplode);
-            newArrow.dx = (enemy.dx * enemy.scale);
+            newArrow.dx = ((enemy.dx * enemy.scale) / 2) - 32;
             if (enemy.frameIndex === 0) {
                 explosions.push(sprite(newArrow));
             }

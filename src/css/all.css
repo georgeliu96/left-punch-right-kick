@@ -98,13 +98,14 @@
 .hiscore-form {
     z-index: 10000;
     position: absolute; 
-    left: calc(46.4%);
     top: 38vh;
     display: none;
+    justify-content: center;
 }
 
 .hiscore {
     /* display: none; */
+    align-self: center;
     padding: 8px;
     border-radius: 10px;
     font-family: "Press Start 2P";

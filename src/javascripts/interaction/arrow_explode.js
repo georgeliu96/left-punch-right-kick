@@ -11,5 +11,6 @@ export var arrowExplode = ({
     numberOfFrames: 10,
     ticksPerFrame: 1,
     yIndex: 1,
-    dy: 330,
+    dy: 40,
+    scale: 2
 })

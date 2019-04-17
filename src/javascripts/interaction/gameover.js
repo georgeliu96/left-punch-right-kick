@@ -77,7 +77,7 @@ function renderText() {
     ctx.fillText(header, canvas.width/2, canvas.height/5);
 
 
-    if (form.style.display === "block") {
+    if (form.style.display === "flex") {
         var hiFont = "Type your initials and hit enter"
         ctx.font = '14px "Press Start 2P"';
         ctx.textAlign = "center";
@@ -119,7 +119,7 @@ function handleSubmit(e, score) {
 
 export function renderGameover (score) {
     let f = new FontFace('Press Start 2P', 'url(https://fonts.gstatic.com/s/pressstart2p/v7/e3t4euO8T-267oIAQAu6jDQyK3nYivN04w.woff2)');
-    form.style.display = "block";
+    form.style.display = "flex";
 
     f.load().then(() => {
 
