@@ -18,7 +18,7 @@ export var handlePress = (e) => {
     if (currentEnemies.length > 0) {
         for(let i = 0; i < Math.min(currentEnemies.length, 2); i++) {
             if (e.code === "ArrowLeft" || e.code === "KeyA") {
-                if(((currentEnemies[i].dx  + currentEnemies[i].width) * currentEnemies[i].scale) > 350 && currentEnemies[i].key === "left") {
+                if(((currentEnemies[i].dx  + currentEnemies[i].width) * currentEnemies[i].scale) > 325 && currentEnemies[i].key === "left") {
                     currentEnemies[i].image = dyingLeft;
                     currentEnemies[i].frameIndex = 0;
                     currentEnemies[i].sx = 0;
@@ -29,15 +29,15 @@ export var handlePress = (e) => {
                     currentEnemies.splice(i, 1);
                 }
             }else if (e.code === "ArrowUp" || e.code === "KeyW"){
-                if((currentEnemies[i].dx * currentEnemies[i].scale) < 600 && currentEnemies[i].key === "up") {
+                if((currentEnemies[i].dx * currentEnemies[i].scale) < 550 && currentEnemies[i].key === "up") {
                     currentEnemies[i].image = dyingUp;
                     currentEnemies[i].numberOfFrames = 6; 
-                    currentEnemies.frameIndex = 0;
+                    currentEnemies[i].frameIndex = 0;
                     dyingEnemies.push(currentEnemies[i]);
                     currentEnemies.splice(i,1);
                 }
-            }else if (e.code === "ArrowDown" || e.code === "KeyD"){
-                if(((currentEnemies[i].dx + currentEnemies[i].width)* currentEnemies[i].scale) > 350 && currentEnemies[i].key === "down") {
+            }else if (e.code === "ArrowDown" || e.code === "KeyS"){
+                if(((currentEnemies[i].dx + currentEnemies[i].width)* currentEnemies[i].scale) > 325 && currentEnemies[i].key === "down") {
                     currentEnemies[i].image = dyingDown; 
                     currentEnemies[i].numberOfFrames = 6;
                     currentEnemies[i].frameIndex = 0;
@@ -45,7 +45,7 @@ export var handlePress = (e) => {
                     currentEnemies.splice(i,1);  
                 }
             }else {
-                if((currentEnemies[i].dx * currentEnemies[i].scale) < 600 && currentEnemies[i].key === "right") {
+                if((currentEnemies[i].dx * currentEnemies[i].scale) < 550 && currentEnemies[i].key === "right") {
                     currentEnemies[i].image = dyingRight;
                     currentEnemies[i].numberOfFrames = 10;
                     currentEnemies[i].frameIndex = 0;

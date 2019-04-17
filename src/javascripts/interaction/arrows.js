@@ -26,29 +26,24 @@ var litArrowDown = new Image ();
 litArrowDown.src = "../../left-punch-right-kick/src/assets/keyboard-white-lit-down.png";
 
 
-function arrows(dx, key) {
+function arrows(dx, scale, width, key) {
     var image = "";
-    let scale = 1;
-    if (key === "down") {
-        scale = (1.5/1.2)   
-    } else if (key === "up") {
-        scale = (1/1.2)
-    }
-        
+    
+    //x pos on screen between 0-900
     dx = dx * scale;
-    if (dx < 280) {
+    if ((dx + (width * scale)) < 325) {
         if (key === "left") {
             image = arrowLeft;
         }else {
             image = arrowDown;
         }
-    }else if (dx > 280 && dx < 350) {
+    }else if ((dx + (width * scale)) > 325 && dx < 425) {
         if (key === "left") {
             image = litArrowLeft;
         }else {
             image = litArrowDown;
         }
-    }else if (dx < 420 && dx > 350) {
+    }else if (dx > 450 && dx < 550) {
         if (key === "right") {
             image = litArrowRight;
         }else {
@@ -63,7 +58,7 @@ function arrows(dx, key) {
     }
     ctx.scale(1.2, 1.2);
     ctx.drawImage(
-        image, 0, 0, 16, 16, (dx + 15), 300, 32, 32
+        image, 0, 0, 16, 16, (dx + (width * scale/2) - (16 * scale)) / 1.2, 300, 32, 32
     );
     ctx.scale(1/1.2, 1/1.2);
 }

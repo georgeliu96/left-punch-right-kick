@@ -8,11 +8,12 @@ import sprite from './sprite';
 import { arrowExplode } from './interaction/arrow_explode';
 
 var audio = document.getElementById("audio");
+audio.volume = 0.2;
 audio.addEventListener("ended", function() {
     this.currentTime = 0;
     this.play();
 }, false);
-setTimeout(() => audio.play(), 1000);
+
 
 var canvas = document.getElementById("game-canvas"), 
     ctx = canvas.getContext("2d");
@@ -42,20 +43,19 @@ var gameInterval = "";
 export var started = false; 
 
 function start() {
-    ctx.clearRect(0, 0, 900, 616);
+    ctx.clearRect(0, 0, 900, 600);
     ctx.drawImage(background, 0, 0);
     ctx.scale(3,3);
     ctx.drawImage(play, 130, 100);
     ctx.scale(1/3,1/3);
     canvas.addEventListener("click", handleStart);
-
 }
 
 function handleStart(e) {
     if(e.offsetX > 390 && e.offsetX < 510 && e.offsetY > 300 && e.offsetY < 360) {
         if (!started) {
-
             started = true;
+            audio.play();
             startInterval();
             spawnEnemy();
             canvas.removeEventListener("click", handleStart);
@@ -72,12 +72,11 @@ function startInterval() {
     
         playerSprite.update();
         playerSprite.render();
-    
         currentEnemies.forEach(enemy => {
             enemy.render();
             enemy.update();
             enemy.run(enemy.key);
-            arrows(enemy.dx, enemy.key);
+            arrows(enemy.dx, enemy.scale, enemy.width, enemy.key);
         })
         dyingEnemies.forEach((enemy, idx) => {
             const newArrow = Object.assign({}, arrowExplode);

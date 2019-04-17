@@ -15,7 +15,7 @@ function sprite(options) {
     that.height = options.height;
     that.width = options.width; 
     that.image = options.image;
-    that.dx = options.dx || 0;
+    that.dx = options.dx || -that.width;
     that.dy = options.dy || 0;
     that.sx = options.sx || 0;
     that.atkImg = options.atkImg || "";
@@ -34,7 +34,7 @@ function sprite(options) {
     } 
 
     that.frameStep = () => {
-        that.context.clearRect(0, 0, 900, 616);
+        that.context.clearRect(0, 0, 900, 600);
         ctx.drawImage(background, 0, 0)
     }
 
@@ -58,14 +58,15 @@ function sprite(options) {
     //dir = -1 || 1 for left || right respectively
     that.run = (key) => {
         var total_dx = (key === "left" || key === "down") ? (
-            (that.dx) * that.scale 
-            ) : (850 - (that.dx * that.scale));
+            (that.dx + that.width) * that.scale - 25
+            ) : (
+                900 - (that.dx * that.scale)
+            );
         const dir = (key === "left" || key === "down") ? 1 : -1;
-        if (key === "down" && total_dx < 380) {
+        if (total_dx < 440) {
             that.dx += 6 * dir / that.scale;
-        }else if (key !== "down" && total_dx < 400) {
-            that.dx += 6 * dir / that.scale;
-        }else {
+        }
+        else {
             that.image = that.atkImg; 
             that.ticksPerFrame = 1;
         }
