@@ -85,7 +85,7 @@ function renderText() {
         ctx.fillText(hiFont, canvas.width/2,canvas.height * 5 / 20)
     }
 
-    var restartText = "Click here to restart.";
+    var restartText = "Press Space to restart.";
     ctx.font = '20px "Press Start 2P"';
     ctx.textAlign = "center";
     ctx.fillStyle = "#ffffff";
@@ -124,15 +124,15 @@ export function renderGameover (score) {
     f.load().then(() => {
 
         renderText();
-        canvas.addEventListener("click", e => listener(e));
+        document.addEventListener("keydown", e => listener(e));
     })
     form.addEventListener('submit', (e) => handleSubmit(e, score));
 }
 
 function listener(e) {
-    if (e.offsetY > 500) {
+    if (e.code === "Space") {
         window.location.reload();
-        canvas.removeEventListener("click",e => listener(e));
+        document.removeEventListener("keydown",e => listener(e));
     }
 }
 
