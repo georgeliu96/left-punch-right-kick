@@ -22,7 +22,7 @@ Enemies spawn from the left and right side and the player will have to hit arrow
 ### Canvas
 * Main component on screen with highscore component and links to Github, personal website, and LinkedIn
 * Start screen with play button. Basic tutorial on left side of the website
-* Map background with minor animations to show movement (to add later) 
+* Map background with minor animations or parallax movement to imitate a changing setting (to add later) 
 
 ### Player
 * Player appears in the center of the map and has basic stance animations
@@ -44,6 +44,10 @@ Enemies spawn from the left and right side and the player will have to hit arrow
 ### Explosions
 * Upon killing an enemy, an explosion appears in the top half of the game, at a random x coordinate 
 * Serves to add extra animation in the game but also as a distraction to the player
+
+### Hiscores
+* Once the game is complete, the game presents a screen in which you can enter initials and save your hiscore
+* Scores are saved to Google Firebase and shown on screen as soon as a new score is entered 
 
 ## Future TODOs
 
