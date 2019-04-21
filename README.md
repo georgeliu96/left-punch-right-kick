@@ -7,7 +7,7 @@ Draws inspiration from PC game, One Finger Death Punch and Android game, Stick F
 
 * [Stick Fight: Shadow Warrior gameplay](https://www.youtube.com/watch?v=WkuO8iqzXIA "Stick Fight: Shadow Warrior")
 
-Enemies spawn from the left and right side and the player will have to hit arrow keys when they are close enough in order to kill them. Upon missing an enemy, player will either die or lose health. 
+Enemies spawn from the left and right side and the player will have to hit arrow keys when they are close enough in order to kill them. Upon missing an enemy, player will either die in the enemy is within range and is in an attack animation frame. 
 
 ## MVPs
 
