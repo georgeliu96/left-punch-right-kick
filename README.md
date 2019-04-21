@@ -17,24 +17,33 @@ Draws inspiration from PC game, One Finger Death Punch and Android game, Stick F
 
 Enemies spawn from the left and right side and the player will have to hit arrow keys when they are close enough in order to kill them. Upon missing an enemy, player will either die in the enemy is within range and is in an attack animation frame. 
 
-## MVPs
+## Main Features
 
 ### Canvas
 * Main component on screen with highscore component and links to Github, personal website, and LinkedIn
-* Start screen with play button and basic tutorial
-* Map background with minor animations to show movement 
+* Start screen with play button. Basic tutorial on left side of the website
+* Map background with minor animations to show movement (to add later) 
 
 ### Player
 * Player appears in the center of the map and has basic stance animations
-* Player avatar responds to key clicks and attacks based on the keypress
+* Player avatar responds to key clicks and performs attacks based on the keypress
 
 ### Enemies
 * Enemies run in from both sides of the screen periodically
 * Enemies will attack once within a certain distance of the player
+* Enemies start appearing faster and faster as the game goes on
 
 ### Hit Detection
 * Enemies will die if the player is in an attack animation/sprite within a certain distance of the player
 * The player will die if the enemies is within a certain distance and completes their attack animation
+
+### Arrow keys
+* Arrow keys appear above the enemy corresponding to the key needed to kill the enemy
+* Arrow keys light up when the enemy is within "kill distance" of the player 
+
+### Explosions
+* Upon killing an enemy, an explosion appears in the top half of the game, at a random x coordinate 
+* Serves to add extra animation in the game but also as a distraction to the player
 
 ## Future TODOs
 
