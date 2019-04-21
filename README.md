@@ -28,15 +28,13 @@ Enemies spawn from the left and right side and the player will have to hit arrow
 * Enemies will die if the player is in an attack animation/sprite within a certain distance of the player
 * The player will die if the enemies is within a certain distance and completes their attack animation
 
-## Bonus MVPs
+## Future TODOs
 
 ### Sound effects
-* Add background music and sound effects for attacking and dying. Sound effects for rain/wind?
+- [ ] Add sound effects for attacking and dying. Sound effects for rain/wind?
 
-### Enemies hit based on a song 
-* Enemies will appear based on the BPM of the current song and will go along with the beat at where they should be hit
+### Rhythm game  
+- [ ] Enemies will appear based on the BPM of the current song and will go along with the beat at where they should be hit
 
 ### Difficulty 
-* Easy difficulty will be only left and right keys
-* Medium difficulty will be left, right, down, up
-* Hard difficulty will be 1 through 9 on the numpad 
+- [ ] Normal difficulty will be left, right, down, up. Hard difficulty will be 1 through 9 on the numpad 
