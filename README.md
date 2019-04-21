@@ -1,5 +1,13 @@
 # Left-Punch Right-Kick 
 
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
+
+Live Site: [Left Punch Right Kick](https://saphknight.github.io/left-punch-right-kick/ "Left Punch Right Kick")
+
+![alt text][lprkdemo]
+
+[lprkdemo]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/Game%20Demo.PNG "Game Demo"
+
 ## Introduction 
 Draws inspiration from PC game, One Finger Death Punch and Android game, Stick Fight: Shadow Warrior 
 
