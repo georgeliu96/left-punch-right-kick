@@ -1,5 +1,6 @@
 # Left-Punch Right-Kick 
 
+Technologies Used: Google Firebase, Spritesheets from itch.io and Sprite animations
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 
 Live Site: [Left Punch Right Kick](https://saphknight.github.io/left-punch-right-kick/ "Left Punch Right Kick")
