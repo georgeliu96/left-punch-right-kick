@@ -42,22 +42,30 @@ var gameInterval = "";
 export var started = false; 
 
 function start() {
+
     ctx.clearRect(0, 0, 900, 600);
     ctx.drawImage(background, 0, 0);
     ctx.scale(3,3);
     ctx.drawImage(play, 130, 100);
     ctx.scale(1/3,1/3);
-    canvas.addEventListener("click", handleStart);
+
+    var header = "Press Space to";
+    ctx.font = '30px "Press Start 2P"';
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(header, canvas.width/2, canvas.height * 7 / 15);
+
+    document.addEventListener("keydown", handleStart);
 }
 
 function handleStart(e) {
-    if(e.offsetX > 390 && e.offsetX < 510 && e.offsetY > 300 && e.offsetY < 360) {
+    if(e.code === "Space") {
         if (!started) {
             started = true;
             audio.play();
             startInterval();
             spawnEnemy();
-            canvas.removeEventListener("click", handleStart);
+            document.removeEventListener("keydown", handleStart);
         }
     }
 }
@@ -121,7 +129,11 @@ function startInterval() {
     }, 20);
 }
 
-start();
+let f = new FontFace('Press Start 2P', 'url(https://fonts.gstatic.com/s/pressstart2p/v7/e3t4euO8T-267oIAQAu6jDQyK3nYivN04w.woff2)');
+f.load().then(() => {
+    debugger 
+    start();
+})
 
 
 export default canvas;
