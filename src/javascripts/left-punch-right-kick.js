@@ -131,7 +131,6 @@ function startInterval() {
 
 let f = new FontFace('Press Start 2P', 'url(https://fonts.gstatic.com/s/pressstart2p/v7/e3t4euO8T-267oIAQAu6jDQyK3nYivN04w.woff2)');
 f.load().then(() => {
-    debugger 
     start();
 })
 
