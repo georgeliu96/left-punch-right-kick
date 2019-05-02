@@ -56,11 +56,11 @@ function arrows(dx, scale, width, key) {
             image = arrowUp;
         }
     }
-    ctx.scale(1.2, 1.2);
+    ctx.scale(1.8, 1.8);
     ctx.drawImage(
-        image, 0, 0, 16, 16, (dx + (width * scale/2) - (16 * scale)) / 1.2, 300, 32, 32
+        image, 0, 0, 16, 16, (dx + (width * scale/2) - (16 * 1.8)) / 1.8, 350 / 1.8, 32, 32
     );
-    ctx.scale(1/1.2, 1/1.2);
+    ctx.scale(1/1.8, 1/1.8);
 }
 
 export default arrows;
