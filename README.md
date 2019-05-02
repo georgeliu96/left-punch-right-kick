@@ -113,13 +113,13 @@ Enemies continously spawn in at a faster and faster pace until the cap of 500ms 
 * Upon killing an enemy, an explosion appears in the top half of the game, at a random x coordinate 
 * Serves to add extra animation in the game but also as a distraction to the player
 
-### Hiscores
+### High scores
 
 ![alt text][lprkhiscore]
 
-[lprkhiscore]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/Gameover.PNG "Hiscores"
+[lprkhiscore]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/Gameover.PNG "High scores"
 
-* Once the game is complete, the game presents a screen in which you can enter initials and save your hiscore
+* Once the game is complete, the game presents a screen in which you can enter initials and save your high score
 * Scores are saved to Google Firebase and shown on screen as soon as a new score is entered 
 
 ## Future TODOs
