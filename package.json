@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saphknight/left-punch-right-kick.git"
+    "url": "git+https://github.com/georgeliu96/left-punch-right-kick.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saphknight/left-punch-right-kick/issues"
+    "url": "https://github.com/georgeliu96/left-punch-right-kick/issues"
   },
-  "homepage": "https://github.com/saphknight/left-punch-right-kick#readme",
+  "homepage": "https://github.com/georgeliu96/left-punch-right-kick#readme",
   "dependencies": {
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"

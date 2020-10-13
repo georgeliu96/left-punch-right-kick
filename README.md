@@ -4,11 +4,11 @@ Technologies Used: Google Firebase, Spritesheets from itch.io and Sprite animati
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 
-Live Site: [Left Punch Right Kick](https://saphknight.github.io/left-punch-right-kick/ "Left Punch Right Kick")
+Live Site: [Left Punch Right Kick](https://georgeliu96.github.io/left-punch-right-kick/ "Left Punch Right Kick")
 
 ![alt text][lprkdemo]
 
-[lprkdemo]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/Game%20Demo.PNG "Game Demo"
+[lprkdemo]: https://github.com/georgeliu96/left-punch-right-kick/blob/master/src/assets/Game%20Demo.PNG "Game Demo"
 
 ## Introduction 
 Draws inspiration from PC game, One Finger Death Punch and Android game, Stick Fight: Shadow Warrior 
@@ -25,7 +25,7 @@ Enemies spawn from the left and right side and the player will have to hit arrow
 
 ![alt text][lprkcanvas]
 
-[lprkcanvas]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/main-screen.PNG "Game Canvas"
+[lprkcanvas]: https://github.com/georgeliu96/left-punch-right-kick/blob/master/src/assets/main-screen.PNG "Game Canvas"
 
 * Main component on screen with highscore component and links to Github, personal website, and LinkedIn
 * Start screen with play button. Basic tutorial on left side of the website
@@ -90,7 +90,7 @@ Enemies continously spawn in at a faster and faster pace until the cap of 500ms 
 
 ![alt text][lprkenemy]
 
-[lprkenemy]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/hitdetection.PNG "Hit Detection"
+[lprkenemy]: https://github.com/georgeliu96/left-punch-right-kick/blob/master/src/assets/hitdetection.PNG "Hit Detection"
 
 * Enemies will die if the player is in an attack animation/sprite within a certain distance of the player
 * The player will die if the enemies is within a certain distance and completes their attack animation
@@ -99,7 +99,7 @@ Enemies continously spawn in at a faster and faster pace until the cap of 500ms 
 
 ![alt text][lprkarrows]
 
-[lprkarrows]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/game-arrows.PNG "Game Arrows"
+[lprkarrows]: https://github.com/georgeliu96/left-punch-right-kick/blob/master/src/assets/game-arrows.PNG "Game Arrows"
 
 * Arrow keys appear above the enemy corresponding to the key needed to kill the enemy
 * Arrow keys light up when the enemy is within "kill distance" of the player 
@@ -108,7 +108,7 @@ Enemies continously spawn in at a faster and faster pace until the cap of 500ms 
 
 ![alt text][lprkexplosions]
 
-[lprkexplosions]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/game-explosions.PNG "Game Explosions"
+[lprkexplosions]: https://github.com/georgeliu96/left-punch-right-kick/blob/master/src/assets/game-explosions.PNG "Game Explosions"
 
 * Upon killing an enemy, an explosion appears in the top half of the game, at a random x coordinate 
 * Serves to add extra animation in the game but also as a distraction to the player
@@ -117,7 +117,7 @@ Enemies continously spawn in at a faster and faster pace until the cap of 500ms 
 
 ![alt text][lprkhiscore]
 
-[lprkhiscore]: https://github.com/saphknight/left-punch-right-kick/blob/master/src/assets/Gameover.PNG "High scores"
+[lprkhiscore]: https://github.com/georgeliu96/left-punch-right-kick/blob/master/src/assets/Gameover.PNG "High scores"
 
 * Once the game is complete, the game presents a screen in which you can enter initials and save your high score
 * Scores are saved to Google Firebase and shown on screen as soon as a new score is entered 
